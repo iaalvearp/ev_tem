@@ -1,0 +1,16 @@
+---
+import MovingDownArrow from '../components/pieces/MovingDownArrow.astro'
+---
+
+<header class="min-h-screen w-full max-w-3xl mx-auto overflow-hidden z-20 relative">
+    <img class="bef max-w-80 h-auto absolute top-0 left-[-0.5rem]" src="/img/plantas_inicio.png" alt="">
+    <img class="fade-up w-full max-w-[30rem] absolute inset-0 m-auto z-30" src="/img/logo-portada.png" alt="">
+    <img class="max-w-80 h-auto absolute bottom-0 right-[-0.5rem]" src="/img/plantas_inicio.png" alt="">
+    <MovingDownArrow />
+</header>
+
+<style>
+    .bef {
+        transform: rotateY(180deg) rotateX(180deg);
+    }
+</style>

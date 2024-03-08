@@ -1,0 +1,15 @@
+---
+const { href } = Astro.props
+---
+
+<a class="block text-center text-base py-3 p-10 bg-[var(--bg)] text-white rounded-full scale-100 active:scale-90 duration-500 border-[1px_var(--bg)] cursor-pointer" href={ href } target="_blank">
+    <slot />
+</a>
+
+<style>
+    a:hover {
+        background-color: white;
+        color: var(--texto);
+        border-color: var(--texto);
+    }
+</style>

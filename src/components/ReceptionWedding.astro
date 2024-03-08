@@ -1,0 +1,38 @@
+---
+import DateWedding from '../components/pieces/DateWedding.astro'
+import IconsWedding from '../components/pieces/IconsWedding.astro'
+import BtnWedding from '../components/pieces/BtnWedding.astro'
+---
+
+<section class="bg-white w-full min-h-full flex flex-col gap-10 pb-5 relative z-40">
+    <DateWedding />
+    <article class="flex flex-col justify-center items-center gap-10">
+        <IconsWedding>
+          <img class="w-full" src="/icons/Sin título-1.png" alt="" />
+        </IconsWedding>
+        <div class="lettSpcng text-base md:text-lg w-full max-w-40 md:max-w-[12rem]">
+          <h2 class="text-left">CEREMONIA</h2>
+          <h2 class="pl-[15%] mt-[-0.25rem]">&</h2>
+          <h2 class="text-right mt-[-1.125rem]">RECEPCIÓN</h2>
+        </div>
+        <div class="lettSpcng-md text-base text-center">
+          <p>04 de mayo del 2024 a las 11:30 am</p>
+          <p>en el hotel Presidente Beach</p>
+          <p>km 3.5 via a Data</p>
+        </div>
+        <BtnWedding
+          href="https://maps.app.goo.gl/uosLUBDqv6wCFoue7">
+          LLEGAR A LA CEREMONIA
+        </BtnWedding>
+        <div class="lettSpcng-md text-base text-center">
+          <p>
+            Agradecemos que nos confirmes <br />
+            tu asistencia hasta el 10 de abril del 2024
+          </p>
+        </div>
+        <BtnWedding
+          href="https://docs.google.com/forms/d/e/1FAIpQLSePhoGVPGqZpSmfw3ZdgLD-93i0AY8g9iieAPD_ZFx0X9vhNw/viewform">
+          CONFIRMAR ASISTENCIA
+        </BtnWedding>
+    </article>
+</section>
