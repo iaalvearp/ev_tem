@@ -1,0 +1,13 @@
+---
+const { src, alt, href, textA, textP} = Astro.props
+---
+
+<div class="lettSpcng-md flex flex-col justify-center items-center gap-1">
+    <div class="h-10 aspect-square">
+      <img src={ src } alt={ alt } />
+    </div>
+    <a href={ href } target="_blank"
+      >{ textA }</a
+    >
+    <p>{ textP }</p>
+  </div>

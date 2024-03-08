@@ -1,0 +1,78 @@
+---
+import ImgWedding from '../../components/pieces/ImgWedding.astro'
+---
+
+<script>
+    const imgs = document.querySelectorAll('.imgWedding');
+    const modal = document.getElementById('modal');
+    const imgModal = document.getElementById('modalImg');
+
+
+    const openModal = (source) => {
+      source = source.id
+      imgModal.setAttribute("src", `/img/${source}.webp`);
+      modal.style.transform = 'scale(1)'
+      modal.style.zIndex = "50"
+      imgModal.style.transform = 'scale(1)'
+    }
+    
+    const closeModal = () => {
+      modal.style.zIndex = '0'
+      modal.style.transform = 'scale(0)'
+      imgModal.style.transform = 'scale(0)'
+    }
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        if (modal.style.transform = 'scale(0)') openModal(img)
+        else closeModal()
+      })
+    })
+
+    modal.addEventListener('click', closeModal)
+</script>
+
+<article class="w-full max-w-5xl min-h-full flex justify-center items-center flex-wrap m-auto gap-4 overflow-hidden">
+      <ImgWedding
+        id="pic1"
+        src="/img/pic1.webp"
+        alt="fotos Carlita y Alonso" /> 
+      <ImgWedding
+        id="pic2"
+        src="/img/pic2.webp"
+        alt="fotos Carlita y Alonso" />
+      <ImgWedding
+        id="pic3"
+        src="/img/pic3.webp"
+        alt="fotos Carlita y Alonso" />
+      <ImgWedding
+        id="pic4"
+        src="/img/pic4.webp"
+        alt="fotos Carlita y Alonso" />
+      <ImgWedding
+        id="pic5"
+        src="/img/pic5.webp"
+        alt="fotos Carlita y Alonso" />
+      <ImgWedding
+        id="pic6"
+        src="/img/pic6.webp"
+        alt="fotos Carlita y Alonso" />
+      <div id="modal" class="h-screen w-full flex justify-center items-center overflow-hidden py-8 px-4 md:px-0">
+        <img class="h-full aspect-square md:max-h-[46rem] w-auto object-cover duration-300 m-auto rounded" id="modalImg" src="" alt="">
+      </div>
+</article>
+
+<style>
+  #modal {
+    position: absolute;
+    transform: scale(0);
+    transition: transform 500ms;
+    background-color: rgb(0, 0, 0, .5);
+    backdrop-filter: blur(0.25rem);
+    z-index: 0;
+  }
+  #modalImg {
+    transform: scale(0);
+    transition: transform 1s;
+  }
+</style>
