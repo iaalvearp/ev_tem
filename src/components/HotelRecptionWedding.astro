@@ -1,0 +1,24 @@
+---
+import SocialCard from "./pieces/SocialCard.astro";
+import IconsWedding from "./pieces/IconsWedding.astro";
+
+
+---
+
+<section class="relative w-full h-full flex flex-col items-center text-center gap-8 md:gap-10 pb-8 z-40">
+    <h2 class="lettSpcng h-32 w-full flex justify-center items-center text-lg bg-[var(--bg)] text-white font-semibold">HOSPEDAJE</h2>
+    <IconsWedding>
+        <img src="/icons/hospedaje.png" alt="" />
+    </IconsWedding>
+    <div class="hospedaje-text">
+      <span class="lettSpcng block text-lg mb-4">Hotel Presidente Beach Playas</span>
+      <p class="lettSpcng-md">La administración del hotel los contactará para</p>
+      <p class="lettSpcng-md">coordinar su hospedaje, en caso de requerirlo.</p>
+    </div>
+    <SocialCard
+    src="/icons/logo ig.png"
+    alt="IG-hotel-presidente-beach-playas"
+    href="https://www.instagram.com/presidentebeachplayas/"
+    textA="@presidentebeachplayas"
+    />
+  </section>
