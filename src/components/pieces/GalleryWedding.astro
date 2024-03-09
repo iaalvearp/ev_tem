@@ -9,8 +9,8 @@ import ImgWedding from '../../components/pieces/ImgWedding.astro'
 
 
     const openModal = (source) => {
-      source = source.id
-      imgModal.setAttribute("src", `/img/${source}.webp`);
+      source = `/img/${source.id}.webp`
+      imgModal.setAttribute("src", source);
       modal.style.transform = 'scale(1)'
       modal.style.zIndex = "50"
       imgModal.style.transform = 'scale(1)'

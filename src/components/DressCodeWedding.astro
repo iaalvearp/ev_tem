@@ -2,145 +2,40 @@
 
 ---
 
-<section class="vestimenta">
-    <div class="vestimenta-text">
-      <h2>DRESS CODE</h2>
-      <p>FORMAL</p>
+<section class="h-full w-full relative grid text-center bg-white text-base md:text-lg z-40 pb-8 gap-10">
+    <div class="lettSpcng h-32 bg-[var(--bg)] text-white flex flex-col justify-center items-center text-lg">
+      <h2 class="text-white font-semibold">DRESS CODE</h2>
+      <p class="text-white font-thin">FORMAL</p>
     </div>
-    <h3 class="vestimenta-title">PALETA DE COLORES</h3>
-    <div class="para-ellas">
-      <h3 class="vestimenta-title">PARA ELLAS</h3>
-      <div class="caja-colores">
-        <div class="colores-up">
-          <div class="color1"></div>
-          <div class="color2"></div>
-          <div class="color3"></div>
-          <div class="color4"></div>
-          <div class="color5"></div>
-          <div class="color6"></div>
-          <div class="color7"></div>
+    <h3 class="lettSpcng text-lg">PALETA DE COLORES</h3>
+    <div class="flex flex-col text-center gap-4 md:gap-8">
+        <h3 class="lettSpcng text-base md:text-lg">PARA ELLAS</h3>
+        <div class="flex flex-wrap justify-center w-full gap-4 mx-auto max-w-[18.75rem] md:max-w-80">
+            <div class="h-12 w-12 rounded-full bg-[rgb(193,162,137)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(242,149,73)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(186,136,180)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(162,204,90)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(214,168,176)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(232,225,96)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(114,126,82)]"></div>
         </div>
-      </div>
     </div>
-    <div class="para-ellos">
-      <h3 class="vestimenta-title">PARA ELLOS</h3>
-      <div class="caja-colores">
-        <div class="colores-up">
-          <div class="color1"></div>
-          <div class="color2"></div>
-          <div class="color3"></div>
-          <div class="color4"></div>
-          <div class="color5"></div>
-          <div class="color6"></div>
-          <div class="color7"></div>
+    <div class="flex flex-col text-center gap-4 md:gap-8">
+        <h3 class="lettSpcng text-base md:text-lg">PARA ELLOS</h3>
+        <div class="flex flex-wrap justify-center w-full gap-4 mx-auto max-w-[18.75rem] md:max-w-80">
+            <div class="h-12 w-12 rounded-full bg-[rgb(127,138,115)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(113,117,124)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(224,213,199)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(239,227,194)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(120,180,239)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(119,94,37)]"></div>
+            <div class="h-12 w-12 rounded-full bg-[rgb(8,65,107)]"></div>
         </div>
-      </div>
     </div>
 </section>
 
 <style>
-    .vestimenta {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display: grid;
-  grid-auto-rows: min-content;
-  gap: 4rem;
-  padding-bottom: 5rem;
-  z-index: 2;
-  background-color: #ffffff;
-  margin-top: -0.5rem;
-}
-.vestimenta-text,
-.hospedaje-title {
-  background-color: var(--bg);
-  padding: 2.5rem 0;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-.vestimenta-text h2,
-.vestimenta-text p,
-.hospedaje-title {
-  color: rgb(255, 255, 255);
-  font-size: var(--fs-medium);
-  letter-spacing: 0.5rem;
-  text-align: center;
-}
-.vestimenta-text p {
-  font-size: var(--fs-medium);
-  font-weight: 100;
-}
-.vestimenta .para-ellas,
-.vestimenta .para-ellos {
-  display: grid;
-  gap: 2rem;
-}
-.vestimenta .vestimenta-title {
-  font-size: var(--fs-medium);
-  font-weight: 500;
-}
-.caja-colores {
-  display: grid;
-  gap: 1.5rem;
-}
-.colores-up {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 25%;
-  justify-content: center;
-  margin: 0 auto;
-}
-.colores-up div {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-}
-.para-ellas .caja-colores .color1 {
-  background-color: rgb(193, 162, 137);
-}
-.para-ellas .caja-colores .color2 {
-  background-color: rgb(242, 149, 73);
-}
-.para-ellas .caja-colores .color3 {
-  background-color: rgb(186, 136, 180);
-}
-.para-ellas .caja-colores .color4 {
-  background-color: rgb(162, 204, 90);
-}
-.para-ellas .caja-colores .color5 {
-  background-color: rgb(214, 168, 176);
-}
-.para-ellas .caja-colores .color6 {
-  background-color: rgb(232, 225, 96);
-}
-.para-ellas .caja-colores .color7 {
-  background-color: rgb(114, 126, 82);
-}
-.para-ellos .caja-colores .color1 {
-  background-color: rgb(127, 138, 115);
-}
-.para-ellos .caja-colores .color2 {
-  background-color: rgb(113, 117, 124);
-}
-.para-ellos .caja-colores .color3 {
-  background-color: rgb(224, 213, 199);
-}
-.para-ellos .caja-colores .color4 {
-  background-color: rgb(239, 227, 194);
-}
-.para-ellos .caja-colores .color5 {
-  background-color: rgb(120, 180, 239);
-}
-.para-ellos .caja-colores .color6 {
-  background-color: rgb(119, 94, 37);
-}
-.para-ellos .caja-colores .color7 {
-  background-color: rgb(8, 65, 107);
-}
+    section {
+        grid-auto-rows: min-content;
+    }
 </style>
