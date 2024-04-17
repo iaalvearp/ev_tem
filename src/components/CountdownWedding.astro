@@ -1,0 +1,67 @@
+---
+import CountdownItem from "./pieces/CountdownItem.astro"
+---
+
+<script>
+
+    const deadline = "May 04 2024 11:30:00 GMT-0500";
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const min = document.getElementById("min");
+    const seg = document.getElementById("seg");
+
+    const getRemainTime = (deadline) => {
+        let today = new Date();
+        let eventDay = new Date(deadline);
+        let remainingTime = (eventDay.getTime() - today.getTime() + 1000) / 1000;
+        
+        let seconds = Math.floor(remainingTime % 60);
+        let minutes = Math.floor(remainingTime / 60 % 60);
+        let hoursValue = Math.floor(remainingTime / 3600 % 24);
+        let daysValue = Math.floor(remainingTime / (3600 * 24));
+        
+        days.textContent = daysValue < 10 ? '0' + daysValue : daysValue.toString();
+        hours.textContent = hoursValue < 10 ? '0' + hoursValue : hoursValue.toString();
+        min.textContent = minutes < 10 ? '0' + minutes : minutes.toString();
+        seg.textContent = seconds < 10 ? '0' + seconds : seconds.toString();
+}
+
+
+const updater = (func) => {
+    let update = setInterval(() => {
+        func(deadline);
+    }, 1000);
+    return update;
+}
+
+updater(getRemainTime);
+
+</script>
+
+<article class="w-full h-32 bg-[var(--bg)] flex justify-center items-center gap-2 md:gap-4 relative">
+    <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
+    <div class="flex flex-col justify-center items-center px-2">
+        <h2 class="lettSpcng-md text-base md:text-lg text-white font-normal">Falta Poco:</h2>
+        <div class="flex justify-center items-center gap-4">
+            <CountdownItem 
+            id="days"
+            text="DÍAS"/>
+            <CountdownItem 
+            id="hours"
+            text="HORAS"/>
+            <CountdownItem 
+            id="min"
+            text="MIN"/>
+            <CountdownItem 
+            id="seg"
+            text="SEG"/>
+        </div>
+    </div>
+    <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
+</article>
+
+<style>
+    .firstPlant {
+        transform: rotateY(180deg) rotate(25deg);
+    }
+</style>

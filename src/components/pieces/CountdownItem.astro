@@ -1,0 +1,13 @@
+---
+interface Props {
+    id: string,
+    text: string,
+}
+
+const { id, text } = Astro.props
+---
+
+<div class="text-base md:text-xs flex flex-col items-center justify-center">
+    <span class="lettSpcng-md text-lg text-white" id={id}>00</span>
+    <span class="text-white">{text}</span>
+</div>

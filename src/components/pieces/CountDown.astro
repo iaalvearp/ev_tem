@@ -1,0 +1,48 @@
+---
+
+---
+
+<script>
+    let deadline = "May 04 2024 11:30:00 GMT-0500"
+
+    const getRemainTime = (deadline) => {
+        let today = new Date();
+        let eventDay = new Date(deadline);
+        let remainingTime = (eventDay.getTime() - today.getTime() + 1000) / 1000;
+        let seconds = ('0' + Math.floor(remainingTime % 60)).slice(-2)
+        let minutes = ('0' + Math.floor(remainingTime / 60 % 60)).slice(-2)
+        let hours = ('0' + Math.floor(remainingTime / 3600 % 24)).slice(-2)
+        let days = Math.floor(remainingTime / (3600 * 24))
+        
+        return `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+    }
+
+    const updater = (func) => {
+        let update = setInterval(() => {
+            let time = func(deadline);
+            document.getElementById('countdownResult').textContent = time;
+        }, 1000);
+        return update
+    }
+
+    updater(getRemainTime);
+    
+</script>
+
+
+
+<article class="w-full h-32 bg-[var(--bg)] flex justify-center items-center gap-2 md:gap-4 relative">
+    <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
+    <div class="lettSpcng-md text-base md:text-lg text-white flex flex-col justify-center items-center px-2">
+        <h2 class="lettSpcng-md text-base md:text-lg text-white font-semibold">COUNTDOWN</h2>
+        <p class="lettSpcng-md text-base md:text-lg text-white">04 · 05 · 2024 11:30am</p>
+        <span class="lettSpcng-md text-base md:text-lg text-white" id="countdownResult">0d : 00h : 00m : 00s</span>
+    </div>
+    <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
+</article>
+
+<style>
+    .firstPlant {
+        transform: rotateY(180deg) rotate(25deg);
+    }
+</style>
