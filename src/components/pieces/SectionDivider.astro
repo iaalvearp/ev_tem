@@ -1,0 +1,16 @@
+---
+const { src, alt, title, text } = Astro.props;
+
+interface Props {
+    src: string,
+    alt?: string,
+    title: string,
+    text: string,
+}
+---
+
+<div class="flex flex-col justify-center items-center gap-4 w-full min-h-max bg-slate-600 py-8 relative z-50">
+    <img class="w-14 h-auto" src={src} alt={alt}>
+    <h2 class="text-balance text-white text-2xl">{title}</h2>
+    <p class="text-white text-lg">{text}</p>
+</div>

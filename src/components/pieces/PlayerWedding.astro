@@ -1,9 +1,8 @@
 ---
 interface Props {
     src: string
-    durationTime: number
 }
-const { src, durationTime } = Astro.props
+const { src } = Astro.props
 ---
 
 <script>
@@ -45,7 +44,7 @@ const { src, durationTime } = Astro.props
     <audio class="hidden" id="audio" controls>
         <source src={src} type="audio/mpeg">
     </audio>
-    <input value="0" type="range" name="progress" id="progress" class="w-40" min="0" max={durationTime}>
+    <input value="0" type="range" name="progress" id="progress" class="w-40" min="0">
 </article>
 
 <style>

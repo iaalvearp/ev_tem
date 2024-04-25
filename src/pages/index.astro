@@ -7,18 +7,34 @@ import DressCodeWedding from '../components/DressCodeWedding.astro'
 import HotelRecptionWedding from '../components/HotelRecptionWedding.astro'
 import GiftWedding from '../components/GiftWedding.astro'
 import FooterWedding from '../components/FooterWedding.astro'
+import DressCodeDivider from '../components/pieces/SectionDivider.astro';
+import ParentSection from '../components/pieces/ParentSection.astro';
+import PlayerWedding from '../components/pieces/PlayerWedding.astro';
 ---
 
-<Layout title="Alonso y Carlita">
+<Layout title="Components List">
 	<main class="min-h-screen w-full relative">
 		<img class="min-h-screen w-full fixed object-center object-cover z-0" src="/img/hero_bg.jpg" alt="">
 		<span class="h-full w-full absolute z-10 bg-white/70"></span>
 		<HeaderWedding />
+		<PlayerWedding 
+		src="audio/audio_1.mp3"/>
+		<ParentSection
+		src='img/planta_fecha.png'
+		boyFather="Robert de Niro"
+		boyMother="Meryl Streep"
+		girlFather="Tom Cruise"
+		girlMother="Penélope Cruz"
+		godfather="Al Pacino"
+		godmother="Miranda Priestly" />
 		<ReceptionWedding />
-		<PhotosWedding />
 		<DressCodeWedding />
 		<HotelRecptionWedding />
-		<GiftWedding />
+		<DressCodeDivider 
+		src='icons/regalo.png'
+		alt='dress code picture'
+		title='CÓDIGO DE VESTIMENTA'
+		text='FORMAL'/>
 		<FooterWedding />
 	</main>
 </Layout>
