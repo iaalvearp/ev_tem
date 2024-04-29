@@ -39,29 +39,36 @@ updater(getRemainTime);
 </script>
 
 <article class="w-full h-32 bg-[var(--bg)] flex justify-center items-center gap-2 md:gap-4 relative">
-    <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
-    <div class="flex flex-col justify-center items-center px-2">
+    <img class="firstPlant h-auto max-w-12 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
+    <div class="flex flex-col justify-center items-center px-2 gap-2">
         <h2 class="lettSpcng-md text-base md:text-lg text-white font-normal">Falta Poco:</h2>
         <div class="flex justify-center items-center gap-4">
             <CountdownItem 
             id="days"
             text="DÍAS"/>
+            <span>:</span>
             <CountdownItem 
             id="hours"
             text="HORAS"/>
+            <span>:</span>
             <CountdownItem 
             id="min"
             text="MIN"/>
+            <span>:</span>
             <CountdownItem 
             id="seg"
             text="SEG"/>
         </div>
     </div>
-    <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
+    <img class="h-auto max-w-12 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
 </article>
 
 <style>
     .firstPlant {
         transform: rotateY(180deg) rotate(25deg);
+    }
+    span {
+        color: white;
+        font-size: 1.5rem;
     }
 </style>

@@ -1,8 +1,9 @@
 ---
+    const { src, textColor } = Astro.props
 interface Props {
-    src: string
+    src: string,
+    textColor: string
 }
-const { src } = Astro.props
 ---
 
 <script>
@@ -10,7 +11,6 @@ const { src } = Astro.props
     const btnPause = document.getElementById("btnPause")
     const btns = document.getElementById("btns")
     const audio = document.getElementById("audio")
-    const progressBar = document.getElementById("progress")
 
     const play = () => {
         if (audio instanceof HTMLAudioElement) {
@@ -22,41 +22,71 @@ const { src } = Astro.props
     }
 
     const changeBtn = () => {
-        if (btnPlay.style.transform = "scale(1)") {
-            btnPlay.style.transform = "scale(0)"
-            btnPause.style.transform = "scale(1)"
-            play()
-        } else {
-            btnPlay.style.transform = "scale(1)"
-            btnPause.style.transform = "scale(0)"
-            pause()
+        if (audio instanceof HTMLAudioElement) {
+            if (audio.ended || audio.paused) {
+                btnPlay.style.transform = "scale(0)"
+                btnPause.style.transform = "scale(1)"
+                play()
+            } else {
+                btnPlay.style.transform = "scale(1)"
+                btnPause.style.transform = "scale(0)"
+                pause()
+            }
         }
     }
 
     btns.addEventListener("click", changeBtn)
+
+    setTimeout(() => {
+        if (audio instanceof HTMLAudioElement) {
+            if (audio.ended || audio.paused) {
+                btnPlay.style.transform = "scale(1)"
+                btnPause.style.transform = "scale(0)"
+            }
+        }
+    }, 500);
+    
 </script>
 
 <article class="flex items-center justify-center w-full h-14">
-    <div id="btns" class="relative grid grid-cols-1 grid-rows-1 h-full p-4">
-        <svg id="btnPlay" class="col-start-1 col-end-2 row-start-1 row-end-2 duration-300 w-full" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4v16l13 -8z" /></svg>
-        <svg id="btnPause" class="col-start-1 col-end-2 row-start-1 row-end-2 duration-300 w-full" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-pause"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /><path d="M14 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/></svg>
+    <div id="btns" class="relative grid grid-cols-1 grid-rows-1 h-full p-2 rounded-full overflow-hidden">
+        <svg id="btnPlay" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={textColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4v16l13 -8z" /></svg>
+        <svg id="btnPause" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={textColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-player-pause"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /><path d="M14 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z"/></svg>
+        <div class="absolute h-[150%] w-[150%] animate-pulse bg-[var(--text)] z-0"></div>
     </div>
     <audio class="hidden" id="audio" controls>
         <source src={src} type="audio/mpeg">
     </audio>
-    <input value="0" type="range" name="progress" id="progress" class="w-40" min="0">
 </article>
 
 <style>
-    #btnPause, #btnPlay {
+    svg {
         transform: scale(0);
         cursor: pointer;
         height: 100%;
+        width: 100%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        transition-duration: 300ms;
+        z-index: 1;
     }
-    #btnPlay {
+    #btns #btnPlay {
         transform: scale(1);
     }
     #progress {
         --webkit-appearance: none;
+        width: 60%;
+        max-width: 20rem;
+        height: .25rem;
+        border-radius: .5rem;
+        background: var(--contrast);
+        cursor: pointer;
+        overflow: hidden;
+    }
+    article #progress::-webkit-slider-thumb {
+        --webkit-appearance: none;
+        width: 1px;
+        height: 1rem;
+        box-shadow: -25rem 0 0 25rem var(--text);
     }
 </style>

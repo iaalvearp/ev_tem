@@ -1,0 +1,27 @@
+---
+import PlayerWedding from "./pieces/PlayerWedding.astro"
+import CountdownWedding from "./CountdownWedding.astro"
+---
+
+
+
+<header class="h-screen max-h-[920px] w-full bg-[var(--bg)] grid grid-rows-8">
+    <div class="row-start-1 row-end-7 relative overflow-hidden">
+        <img class="h-full w-full absolute object-cover z-0" src="img/heroWeddTwo.webp" alt="boda fulanito y fulanita">
+        <div class="absolute w-full h-full bg-[var(--overlay)] z-10"></div>
+        <img class="fade-up w-4/5 max-w-[30rem] absolute inset-0 m-auto z-20" src="/img/logo-portada.png" alt="">
+
+    </div>
+    <div class="row-start-7 row-end-9 bg-[var(--bg)] w-full z-10">
+        <PlayerWedding 
+        src="audio/audio_2.mp3"
+        textColor="var(--contrast)"/>
+        <CountdownWedding />
+    </div>
+</header>
+
+<style>
+    img {
+        mask-image: linear-gradient(black 80%, transparent 100%)
+    }
+</style>

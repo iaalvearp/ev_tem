@@ -13,12 +13,12 @@ interface Props {
 ---
 
 
-<article class="relative z-40 min-h-full w-full text-center py-20 grid place-content-center gap-6">
-    <div class="h-16 w-full flex justify-center items-center gap-4">
+<article class="relative z-40 min-h-full w-full text-center py-10 md:py-20 grid place-content-center gap-4 md:gap-8">
+    <div class="h-16 md:h-20 w-full flex justify-center items-center gap-4">
         <img class="rotXY h-full w-auto" src={src} alt="">
         <img class="rotX h-full w-auto" src={src} alt="">
     </div>
-    <svg class="w-56 mx-auto h-auto" preserveAspectRatio="xMidYMid meet" data-bbox="80.476 238.101 817.231 137.448" height="820" viewBox="80.476 238.101 817.231 137.448" width="1280" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-lp1fxodw2 svg [data-color="1"] {fill: currentColor;}</style></defs>
+    <svg class="w-64 mx-auto h-auto" preserveAspectRatio="xMidYMid meet" data-bbox="80.476 238.101 817.231 137.448" height="820" viewBox="80.476 238.101 817.231 137.448" width="1280" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-lp1fxodw2 svg [data-color="1"] {fill: currentColor;}</style></defs>
         <g>
             <defs>
                 <clipPath id="797ad016-13ed-44f0-b23f-655f8911f154_comp-lp1fxodw2">
@@ -36,29 +36,29 @@ interface Props {
             </g>
         </g>
     </svg>
-    <h2 class="text-3xl font-semibold">CON LA BENDICIÓN DE NUESTROS PADRES</h2>
-    <div class="flex justify-center items-center gap-20">
+    <h2 class="w-4/5 mx-auto text-xl text-balance md:text-3xl font-semibold mb-4">CON LA BENDICIÓN DE NUESTROS PADRES</h2>
+    <div class="flex justify-center items-center gap-8 md:gap-20">
         <div class="grid place-content-center gap-3">
-            <h3>NOVIA</h3>
+            <h3 class="text-sm md:text-base">NOVIA</h3>
             <div class="grid gap-1">
-                <p class="text-lg  uppercase">{girlMother}</p>
-                <p class="text-lg  uppercase">{girlFather}</p>
+                <p class="text-base md:text-lg uppercase">{girlMother}</p>
+                <p class="text-base md:text-lg uppercase">{girlFather}</p>
             </div>
         </div>
         <div class="grid place-content-center gap-3">
-            <h3>NOVIO</h3>
+            <h3 class="text-sm md:text-base">NOVIO</h3>
             <div class="grid gap-1">
-                <p class="text-lg  uppercase">{boyMother}</p>
-                <p class="text-lg  uppercase">{boyFather}</p>
+                <p class="text-base md:text-lg uppercase">{boyMother}</p>
+                <p class="text-base md:text-lg uppercase">{boyFather}</p>
             </div>
         </div>
     </div>
-    <h2 class="text-3xl font-semibold">ACOMPAÑADOS DE NUESTROS PADRINOS</h2>
+    <h2 class="w-4/5 mx-auto text-xl text-balance md:text-3xl font-semibold my-4">ACOMPAÑADOS DE NUESTROS PADRINOS</h2>
     <div class="grid gap-1">
-        <p class="text-lg  uppercase">{godmother}</p>
-        <p class="text-lg uppercase">{godfather}</p>
+        <p class="text-base md:text-lg uppercase">{godmother}</p>
+        <p class="text-base md:text-lg uppercase">{godfather}</p>
     </div>
-    <svg class="w-56 h-auto mx-auto rotX" preserveAspectRatio="xMidYMid meet" data-bbox="80.476 238.101 817.231 137.448" height="820" viewBox="80.476 238.101 817.231 137.448" width="1280" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-lp1fxodw2 svg [data-color="1"] {fill: currentColor;}</style></defs>
+    <svg class="w-64 h-auto mx-auto rotX" preserveAspectRatio="xMidYMid meet" data-bbox="80.476 238.101 817.231 137.448" height="820" viewBox="80.476 238.101 817.231 137.448" width="1280" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true"><defs><style>#comp-lp1fxodw2 svg [data-color="1"] {fill: currentColor;}</style></defs>
         <g>
             <defs>
                 <clipPath id="797ad016-13ed-44f0-b23f-655f8911f154_comp-lp1fxodw2">
@@ -92,4 +92,5 @@ interface Props {
     .rotXY {
         transform: rotateY(180deg) rotateX(180deg);
     }
+    
 </style>

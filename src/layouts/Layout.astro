@@ -23,6 +23,8 @@ const { title } = Astro.props;
 	:root {
 		--bg: rgb(134, 154, 148);
   		--text: rgb(93, 99, 99);
+		--overlay: rgb(134, 154, 148, .5);
+		--contrast: white;
 	}
 	h1, h2, h3 {
 		text-wrap: balance;
@@ -37,7 +39,6 @@ const { title } = Astro.props;
 
 	* {
 		font-family: 'micross', sans-serif;
-		color: var(--text);
 	}
 	.fade-up {
 		animation: fade-up 750ms ease-in-out;
