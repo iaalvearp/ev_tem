@@ -9,35 +9,37 @@ import GiftWedding from '../components/GiftWedding.astro'
 import FooterWedding from '../components/FooterWedding.astro'
 import DressCodeDivider from '../components/pieces/SectionDivider.astro';
 import ParentSection from '../components/pieces/ParentSection.astro';
-import PlayerWedding from '../components/pieces/PlayerWedding.astro';
 import HeroWeddTwo from '../components/HeroWeddTwo.astro';
+import OneSliderSection from '../components/OneSliderSection.astro'
 ---
 
 <Layout title="Components List">
 	<main class="min-h-screen w-full relative">
-		<HeroWeddTwo />
-		<!-- 
-		<img class="min-h-screen w-full fixed object-center object-cover z-0" src="/img/hero_bg.jpg" alt="">
-		<span class="h-full w-full absolute z-10 bg-white/70"></span>
-		<HeaderWedding />
-		<PlayerWedding 
-		src="audio/audio_1.mp3"/>
+		<HeroWeddTwo 
+		srcImg="img/heroWeddTwo.webp"
+		srcAudio="audio/audio_2.mp3"
+		altHero="Matrimonio de Fulanita y Fulanito"/>
 		<ParentSection
-		src='img/planta_fecha.png'
+		showImg='hidden'
 		boyFather="Robert de Niro"
 		boyMother="Meryl Streep"
 		girlFather="Tom Cruise"
 		girlMother="Penélope Cruz"
 		godfather="Al Pacino"
 		godmother="Miranda Priestly" />
-		<ReceptionWedding />
-		<DressCodeWedding />
-		<HotelRecptionWedding />
 		<DressCodeDivider 
 		src='icons/regalo.png'
 		alt='dress code picture'
 		title='CÓDIGO DE VESTIMENTA'
 		text='FORMAL'/>
+		<OneSliderSection />
+		<!-- 
+		<img class="min-h-screen w-full fixed object-center object-cover z-0" src="/img/hero_bg.jpg" alt="">
+		<span class="h-full w-full absolute z-10 bg-white/70"></span>
+		<HeaderWedding />
+		<ReceptionWedding />
+		<DressCodeWedding />
+		<HotelRecptionWedding />
 		<FooterWedding />
 		-->
 	</main>

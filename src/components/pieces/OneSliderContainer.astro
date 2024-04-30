@@ -1,0 +1,21 @@
+---
+const { id } = Astro.props
+
+interface Props {
+  id: string  
+}
+---
+
+<div class="gallery" id= { id } >
+    <slot />
+</div>
+
+  <style>
+    .gallery {
+        width: 100%;
+        max-height: 25rem;
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 400ms ease-in;
+    }
+  </style>

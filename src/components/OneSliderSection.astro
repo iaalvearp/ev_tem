@@ -1,0 +1,55 @@
+---
+import OneSliderContainer from "./pieces/OneSliderContainer.astro"
+import OneSlide from "./pieces/OneSlide.astro"
+---
+
+<script>
+    const sliderContainer = document.getElementById("sliderContainer");
+    let index = 1;
+    let imgs = sliderContainer.querySelectorAll(".slidePic");
+
+    setInterval(()=>{
+        let percentage = index * -100;
+        sliderContainer.style.transform = "translateX(" + percentage +"%)";
+        index+= 1;
+        if (index > (imgs.length - 1)) {
+            index = 0;
+        };
+    }, 6000);
+
+</script>
+
+
+<section class="w-[90%] max-w-[48rem] mx-auto text-center overflow-hidden py-16 grid place-content-center gap-8">
+    <h2 class="text-xl text-balance md:text-3xl font-semibold">GALERÍA DE FOTOS</h2>
+    <div>
+        <p class="text-base md:text-lg">04 DE MAYO DEL 2024</p>
+    </div>
+    <p class="text-sm md:text-base">GUAYAQUIL, GUAYAS</p>
+    <OneSliderContainer id="sliderContainer">
+        <OneSlide 
+        src="img/pic1.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+        <OneSlide 
+        src="img/pic2.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+        <OneSlide 
+        src="img/pic3.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+        <OneSlide 
+        src="img/pic4.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+        <OneSlide 
+        src="img/pic5.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+        <OneSlide 
+        src="img/pic6.webp"
+        alt="Matrimonio Alonso y Carlita"
+        imgClass="slidePic"/>
+    </OneSliderContainer>
+</section>

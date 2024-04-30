@@ -1,20 +1,21 @@
 ---
-const { src, boyFather, boyMother, girlFather, girlMother, godfather, godmother } = Astro.props
+const { src, boyFather, boyMother, girlFather, girlMother, godfather, godmother, showImg } = Astro.props
 
 interface Props {
-    src: string,
+    src?: string,
     boyFather: string,
     boyMother: string,
     girlFather: string,
     girlMother: string,
     godfather: string,
     godmother: string,
+    showImg: "flex" | "hidden"
 }
 ---
 
 
-<article class="relative z-40 min-h-full w-full text-center py-10 md:py-20 grid place-content-center gap-4 md:gap-8">
-    <div class="h-16 md:h-20 w-full flex justify-center items-center gap-4">
+<article class="relative z-40 min-h-full w-full text-center py-10 md:py-20 grid place-content-center gap-4 md:gap-8 text-[var(--text)]">
+    <div class=`h-16 md:h-20 w-full justify-center items-center gap-4 ${showImg}`>
         <img class="rotXY h-full w-auto" src={src} alt="">
         <img class="rotX h-full w-auto" src={src} alt="">
     </div>
@@ -37,7 +38,7 @@ interface Props {
         </g>
     </svg>
     <h2 class="w-4/5 mx-auto text-xl text-balance md:text-3xl font-semibold mb-4">CON LA BENDICIÓN DE NUESTROS PADRES</h2>
-    <div class="flex justify-center items-center gap-8 md:gap-20">
+    <div class="fade-scroll flex justify-center items-center gap-8 md:gap-20">
         <div class="grid place-content-center gap-3">
             <h3 class="text-sm md:text-base">NOVIA</h3>
             <div class="grid gap-1">
@@ -54,7 +55,7 @@ interface Props {
         </div>
     </div>
     <h2 class="w-4/5 mx-auto text-xl text-balance md:text-3xl font-semibold my-4">ACOMPAÑADOS DE NUESTROS PADRINOS</h2>
-    <div class="grid gap-1">
+    <div class="fade-scroll grid gap-1">
         <p class="text-base md:text-lg uppercase">{godmother}</p>
         <p class="text-base md:text-lg uppercase">{godfather}</p>
     </div>
@@ -76,7 +77,7 @@ interface Props {
             </g>
         </g>
     </svg>
-    <div class="h-16 w-full flex justify-center items-center gap-4">
+    <div class=`h-16 w-full justify-center items-center gap-4 ${showImg}`>
         <img class="rotY h-full w-auto" src={src} alt="">
         <img class="h-full w-auto" src={src} alt="">
     </div>

@@ -1,0 +1,31 @@
+---
+const { src, alt, imgClass } = Astro.props
+
+interface Props {
+  src: string,
+  alt?: string,
+  imgClass: string
+}
+---
+
+<img
+  loading="lazy"
+  class={imgClass}
+  src={src}
+  alt={alt}
+/>
+
+  <style>
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.25rem;
+    }
+    @media (width > 48rem) {
+      img {
+        aspect-ratio: 16/9;
+      }
+    }
+  </style>

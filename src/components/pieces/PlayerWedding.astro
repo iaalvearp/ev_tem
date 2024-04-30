@@ -37,14 +37,7 @@ interface Props {
 
     btns.addEventListener("click", changeBtn)
 
-    setTimeout(() => {
-        if (audio instanceof HTMLAudioElement) {
-            if (audio.ended || audio.paused) {
-                btnPlay.style.transform = "scale(1)"
-                btnPause.style.transform = "scale(0)"
-            }
-        }
-    }, 500);
+    
     
 </script>
 
