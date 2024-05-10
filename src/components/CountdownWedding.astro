@@ -4,7 +4,7 @@ import CountdownItem from "./pieces/CountdownItem.astro"
 
 <script>
 
-    const deadline = "May 04 2024 11:30:00 GMT-0500";
+    const deadline = "Oct 12 2024 00:00:00 GMT-0500";
     const days = document.getElementById("days");
     const hours = document.getElementById("hours");
     const min = document.getElementById("min");
@@ -19,6 +19,14 @@ import CountdownItem from "./pieces/CountdownItem.astro"
         let minutes = Math.floor(remainingTime / 60 % 60);
         let hoursValue = Math.floor(remainingTime / 3600 % 24);
         let daysValue = Math.floor(remainingTime / (3600 * 24));
+
+        if (seconds < 0) {
+            days.textContent = '00'
+            hours.textContent = '00'
+            min.textContent = '00'
+            seg.textContent = '00'
+            return
+        }
         
         days.textContent = daysValue < 10 ? '0' + daysValue : daysValue.toString();
         hours.textContent = hoursValue < 10 ? '0' + hoursValue : hoursValue.toString();

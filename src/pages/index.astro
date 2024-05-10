@@ -13,14 +13,33 @@ import HeroWeddTwo from '../components/HeroWeddTwo.astro';
 import OneSliderSection from '../components/OneSliderSection.astro'
 import CountdownWedding from '../components/CountdownWedding.astro';
 import HeaderParallax from '../components/HeaderParallax.astro';
+import EdgeDividerDown from '../components/pieces/EdgeDividerDown.astro';
+import EdgeDividerUp from '../components/pieces/EdgeDividerUp.astro';
+import CloudDivisorSolid from '../../public/divisor/cloud_divisor_solid.astro';
+import CloudDivisorOverlay from '../../public/divisor/cloud_divisor_overlay.astro';
 ---
 
 <Layout title="Components List">
-	<main class="min-h-screen w-full">
+	<main class="h-full w-full">
 		<HeaderParallax 
 		husband="Alonso"
-		wife="Carla"
-		src="img/heroWeddTwo.webp"/>
+		wife="Carla"/>
+		<EdgeDividerDown>
+			<CloudDivisorSolid slot='solid' />
+			<CloudDivisorOverlay slot='overlay' />
+		</EdgeDividerDown>
+		<ParentSection
+		src="divisor/line_divisor_one.svg"
+		boyFather='Padre del Novio'
+		boyMother='Madre del Novio'
+		girlFather='Padre de la Novia'
+		girlMother='Madre de la Novia'
+		godfather='Al Pacino'
+		godmother='Eva Green' />
+		<EdgeDividerUp>
+			<CloudDivisorSolid slot='solid' />
+			<CloudDivisorOverlay slot='overlay' />
+		</EdgeDividerUp>
 	</main>
 </Layout>
 
