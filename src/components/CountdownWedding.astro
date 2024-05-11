@@ -1,5 +1,6 @@
 ---
 import CountdownItem from "./pieces/CountdownItem.astro"
+import LineDivisorOneLeft from "./pieces/line_divisor_one_left.astro";
 ---
 
 <script>
@@ -47,7 +48,10 @@ updater(getRemainTime);
 </script>
 
 <article class="w-full h-32 bg-transparent flex justify-center items-center gap-2 md:gap-4 relative">
-    <img class="firstPlant h-auto max-w-12 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
+    <!-- <img class="firstPlant h-auto max-w-12 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt=""> -->
+    <div class="w-1/5 max-w-12 text-[var(--contrast)]">
+        <LineDivisorOneLeft />
+    </div>
     <div class="flex flex-col justify-center items-center px-2 gap-2">
         <h2 class="lettSpcng-md text-base md:text-lg text-white font-normal">Falta Poco:</h2>
         <div class="flex justify-center items-center gap-4">
@@ -68,7 +72,10 @@ updater(getRemainTime);
             text="SEG"/>
         </div>
     </div>
-    <img class="h-auto max-w-12 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
+    <div class="rotY w-1/5 max-w-12 text-[var(--contrast)]">
+        <LineDivisorOneLeft />
+    </div>
+    <!-- <img class="h-auto max-w-12 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">  -->
 </article>
 
 <style>

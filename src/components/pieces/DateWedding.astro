@@ -1,11 +1,25 @@
 ---
+import LineDivisorOneLeft from './line_divisor_one_left.astro';
 
+const { day, month, year } = Astro.props;
+
+interface Props {
+    day: string,
+    month: string,
+    year: string,
+}
 ---
 
 <article class="w-full h-32 bg-[var(--bg)] flex justify-center items-center gap-2 md:gap-4 relative">
-    <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">
-    <p class="lettSpcng-md text-base md:text-lg text-white">04 · 05 · 2024</p>
-    <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">
+    <div class="w-1/5 max-w-32 text-[var(--contrast)]">
+        <LineDivisorOneLeft />
+    </div>
+    <!-- <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">  -->
+    <p class="lettSpcng-md text-base md:text-lg text-[var(--contrast)]">{day} · {month} · {year}</p>
+    <div class="rotY w-1/5 max-w-32 text-[var(--contrast)]">
+        <LineDivisorOneLeft />
+    </div>
+    <!-- <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">  -->
 </article>
 
 <style>

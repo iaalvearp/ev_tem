@@ -17,6 +17,7 @@ import EdgeDividerDown from '../components/pieces/EdgeDividerDown.astro';
 import EdgeDividerUp from '../components/pieces/EdgeDividerUp.astro';
 import CloudDivisorSolid from '../components/pieces/cloud_divisor_solid.astro';
 import CloudDivisorOverlay from '../components/pieces/cloud_divisor_overlay.astro';
+import DateWedding from '../components/pieces/DateWedding.astro'
 ---
 
 <Layout title="Components List">
@@ -29,7 +30,6 @@ import CloudDivisorOverlay from '../components/pieces/cloud_divisor_overlay.astr
 			<CloudDivisorOverlay slot='overlay' />
 		</EdgeDividerDown>
 		<ParentSection
-		src="divisor/line_divisor_one.svg"
 		boyFather='Padre del Novio'
 		boyMother='Madre del Novio'
 		girlFather='Padre de la Novia'
@@ -40,6 +40,10 @@ import CloudDivisorOverlay from '../components/pieces/cloud_divisor_overlay.astr
 			<CloudDivisorSolid slot='solid' />
 			<CloudDivisorOverlay slot='overlay' />
 		</EdgeDividerUp>
+		<DateWedding
+		day="12"
+		month="10"
+		year="2024">
 	</main>
 </Layout>
 

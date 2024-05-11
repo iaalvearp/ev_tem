@@ -1,8 +1,9 @@
 ---
-const { src, boyFather, boyMother, girlFather, girlMother, godfather, godmother } = Astro.props
+import LineDivisorOne from './line_divisor_one.astro'
+
+const { boyFather, boyMother, girlFather, girlMother, godfather, godmother } = Astro.props
 
 interface Props {
-    src: string,
     boyFather: string,
     boyMother: string,
     girlFather: string,
@@ -14,7 +15,9 @@ interface Props {
 
 
 <article class="relative z-40 min-h-full w-full text-center py-10 md:py-20 grid place-content-center gap-4 md:gap-8">
-    <img class="w-full max-w-80 px-4 mx-auto fill-[var(--text)]"  src={src}>
+    <div class="w-3/5 max-w-80 mb-4 mx-auto">
+        <LineDivisorOne>
+    </div>
     <h2 class="w-4/5 mx-auto text-xl text-balance md:text-3xl font-semibold mb-4">CON LA BENDICIÓN DE NUESTROS PADRES</h2>
     <div class="fade-scroll flex justify-center items-center gap-8 md:gap-20">
         <div class="grid place-content-center gap-3">
@@ -37,15 +40,14 @@ interface Props {
         <p class="text-base md:text-lg uppercase">{godmother}</p>
         <p class="text-base md:text-lg uppercase">{godfather}</p>
     </div>
-    <img class="rotX w-full max-w-80 px-4 mx-auto fill-[var(--text)]" src={src}>
+    <div class="rotX w-3/5 max-w-80 mt-2 mx-auto">
+        <LineDivisorOne>
+    </div>
 </article>
 
 <style>
     article {
         color: var(--text);
-    }
-    svg {
-        fill: var(--text);
     }
     
 </style>
