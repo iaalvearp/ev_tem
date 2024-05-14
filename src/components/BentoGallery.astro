@@ -1,0 +1,70 @@
+---
+import 'photoswipe/style.css';
+
+---
+
+<script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gallery',
+        children: 'a',
+        pswpModule: () => import('photoswipe')
+    });
+    lightbox.init();
+</script>
+
+<div class="pswp-gallery pswp-gallery--single-column" id="gallery">
+    <a href="/img/iaPic1.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic1.webp" alt="" />
+    </a>
+    <a href="/img/iaPic7.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic7.webp" alt="" />
+    </a>
+    <a href="/img/iaPic3.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic3.webp" alt="" />
+    </a>
+    <a href="/img/iaPic4.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic4.webp" alt="" />
+    </a>
+    <a href="/img/iaPic5.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic5.webp" alt="" />
+    </a>
+    <a href="/img/iaPic6.webp" 
+      data-pswp-width="1080" 
+      data-pswp-height="1080" 
+      target="_blank">
+      <img src="/img/iaPic6.webp" alt="" />
+    </a>
+</div>
+
+<style>
+    #gallery {
+        width: 100%;
+        max-width: 48rem;
+        gap: 1rem;
+        margin: 0 auto;
+        display: grid;
+        grid-auto-rows: 22rem;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+</style>

@@ -20,10 +20,11 @@ import CloudDivisorOverlay from '@/components/pieces/cloud_divisor_overlay.astro
 import DateWedding from '@/components/pieces/DateWedding.astro'
 import LineDivisorOneLeft from '@/components/pieces/line_divisor_one_left.astro';
 import Attribution from '@/components/pieces/Attribution.astro';
+import BentoGallery from '@/components/BentoGallery.astro';
 ---
 
 <Layout title="Components List">
-	<main class="h-full w-full">
+	<main class="h-full w-full relative">
 		<HeaderParallax 
 		husband="Alonso"
 		wife="Carla"/>
@@ -31,7 +32,14 @@ import Attribution from '@/components/pieces/Attribution.astro';
 			<CloudDivisorSolid slot='solid' />
 			<CloudDivisorOverlay slot='overlay' />
 		</EdgeDividerDown>
-		<ParentSection
+		<BentoGallery
+		pic1="/img/iaPic3.webp"
+		pic2="/img/iaPic5.webp"
+		pic3="/img/iaPic7.webp"
+		pic4="/img/iaPic9.webp"
+		pic5="/img/iaPic11.webp"
+		pic6="/img/iaPic13.webp" />
+		<!-- <ParentSection
 		boyFather='Padre del Novio'
 		boyMother='Madre del Novio'
 		girlFather='Padre de la Novia'
@@ -47,25 +55,12 @@ import Attribution from '@/components/pieces/Attribution.astro';
 			<CloudDivisorSolid slot='solid' />
 			<CloudDivisorOverlay slot='overlay' />
 		</EdgeDividerUp>
-		<div class="w-full h-32 bg-[var(--bg)] flex justify-center items-center gap-2 md:gap-4 relative z-50">
-			<div class="w-1/5 max-w-32 text-[var(--contrast)]">
-				<LineDivisorOneLeft />
-			</div>
-			<!-- <img class="firstPlant h-auto max-w-14 md:max-w-20 rotate-[25%]" src="/img/planta_fecha.png" alt="">  -->
-			<div class="lettSpcng-md text-base md:text-lg text-[var(--contrast)] flex flex-col text-center gap-2">
-				<p>LOS ESPERAMOS ESTE:</p>
-				<p class="">12 · 10 · 2024</p>
-			</div>
-			<div class="rotY w-1/5 max-w-32 text-[var(--contrast)]">
-				<LineDivisorOneLeft />
-			</div>
-			<!-- <img class="h-auto max-w-14 md:max-w-20 rotate-[25deg]" src="/img/planta_fecha.png" alt="">  -->
-		</div>
+		
 		<EdgeDividerDown>
 			<CloudDivisorSolid slot='solid' />
 			<CloudDivisorOverlay slot='overlay' />
 		</EdgeDividerDown>
-		<FooterWedding />
+		<FooterWedding /> -->
 		<EdgeDividerUp>
 			<CloudDivisorSolid slot='solid' />
 			<CloudDivisorOverlay slot='overlay' />
