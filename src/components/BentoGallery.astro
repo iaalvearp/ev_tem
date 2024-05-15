@@ -1,6 +1,19 @@
 ---
 import 'photoswipe/style.css';
 
+const { imgW, imgH, pic1, pic2, pic3, pic4, pic5, pic6 } = Astro.props;
+
+interface Props {
+  imgW: string,
+  imgH: string,
+  pic1: string,
+  pic2: string,
+  pic3: string,
+  pic4: string,
+  pic5: string,
+  pic6: string,
+}
+
 ---
 
 <script>
@@ -14,48 +27,49 @@ import 'photoswipe/style.css';
     lightbox.init();
 </script>
 
-<div class="pswp-gallery pswp-gallery--single-column" id="gallery">
-    <a href="/img/iaPic1.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+<h2 class="text-center text-[var(--text)] text-2xl py-8">Nuestros momentos</h2>
+<section class="pswp-gallery pswp-gallery--single-column" id="gallery">
+    <a href={pic1} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic1.webp" alt="" />
+      <img src={pic1} alt="" />
     </a>
-    <a href="/img/iaPic7.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+    <a href={pic2} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic7.webp" alt="" />
+      <img src={pic2} alt="" />
     </a>
-    <a href="/img/iaPic3.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+    <a href={pic3} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic3.webp" alt="" />
+      <img src={pic3} alt="" />
     </a>
-    <a href="/img/iaPic4.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+    <a href={pic4} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic4.webp" alt="" />
+      <img src={pic4} alt="" />
     </a>
-    <a href="/img/iaPic5.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+    <a href={pic5} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic5.webp" alt="" />
+      <img src={pic5} alt="" />
     </a>
-    <a href="/img/iaPic6.webp" 
-      data-pswp-width="1080" 
-      data-pswp-height="1080" 
+    <a href={pic6} 
+      data-pswp-width={imgW} 
+      data-pswp-height={imgH} 
       target="_blank">
-      <img src="/img/iaPic6.webp" alt="" />
+      <img src={pic6} alt="" />
     </a>
-</div>
+  </section >
 
 <style>
     #gallery {
-        width: 100%;
+        width: 90%;
         max-width: 48rem;
         gap: 1rem;
         margin: 0 auto;
@@ -66,5 +80,7 @@ import 'photoswipe/style.css';
     img {
         object-fit: cover;
         width: 100%;
+        height: 100%;
+        border-radius: .25rem;
     }
 </style>
