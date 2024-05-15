@@ -73,7 +73,6 @@ interface Props {
     width: 90%;
     height: 20rem;
     margin: 0 auto;
-    position: relative;
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -102,18 +101,30 @@ interface Props {
   @media (width >= 48rem) {      
       #gallery {
           width: 90%;
+          height: 100%;
           max-width: 48rem;
+          overflow: unset;
           gap: 1rem;
           margin: 0 auto;
           display: grid;
           grid-auto-rows: 22rem;
           grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
       }
+
+      a {
+        aspect-ratio: 1/1;
+      }
       img {
           object-fit: cover;
           width: 100%;
           height: 100%;
           border-radius: .25rem;
+      }
+    }
+
+    @media (width >= 1080px ) {
+      a {
+        aspect-ratio: 3/4;
       }
     }
 </style>
