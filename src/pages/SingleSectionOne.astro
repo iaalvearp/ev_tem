@@ -1,0 +1,116 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SPInvitationDivisor from '@/components/pieces/SPInvitation-divisor.astro';
+const { bride, groom, day, month, year, dirHref, direction } = Astro.props;
+
+interface Props {
+    bride: string,
+    groom: string,
+    day: string,
+    month: string,
+    year: string,
+    dirHref: string,
+    direction: string,
+}
+---
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const inv = document.getElementById('invitation');
+        const height = inv.clientHeight
+        const width = inv.clientWidth
+
+        let ultimoTiempoDeRender = 0;
+
+        inv.addEventListener('mousemove', e => {
+            requestAnimationFrame((tiempo) => {
+                if (tiempo - ultimoTiempoDeRender < 150) return;
+                
+                if (tiempo - ultimoTiempoDeRender >= 150){
+                    ultimoTiempoDeRender = tiempo;
+
+                    const { layerX, layerY } = e;
+    
+                    const yRotation = (
+                        (layerX - width / 2) / width
+                    ) * 20;
+    
+                    const xRotation = (
+                        (layerY - height / 2) / height
+                    ) * 20;
+    
+                    inv.style.transform = `perspective(1250px) scale(1.025) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+
+                    inv.addEventListener('mouseout', () => {
+                    inv.style.transform = `perspective(1250px) scale(1) rotateX(0) rotateY(0)`
+                })
+                }
+
+            });
+        });
+
+    })
+
+
+</script>
+
+<Layout>
+    <header class="w-full min-h-screen md:h-screen h-full bg-[var(--bg)] py-8 text-[var(--gold)]">
+        <section id="invitation" class="w-[90%] h-full max-w-[25rem] max-h-[1024px] mx-auto grid grid-cols-10 grid-rows-[15] rounded overflow-hidden bg-[url(/img/SPInvitation-bg.png)] object-contain bg-no-repeat text-center">
+            <div class="col-start-1 col-end-11 row-start-1 row-end-[16]">
+                <img class="h-full w-full" src="/img/SPInvitation-board-2.png" alt="">
+            </div>
+            <div class="col-start-3 col-end-9 row-start-4 row-end-13">
+                <div>
+                    <SPInvitationDivisor class='w-full '/>
+                    <h2>MATRIMONIO DE</h2>
+                    <SPInvitationDivisor />
+                </div>
+                <div>
+                    <h1 class="handwriting">Alonso</h1>
+                    <div>
+                        <SPInvitationDivisor />
+                        <span>AND</span>
+                        <SPInvitationDivisor />
+                    </div>
+                    <h1 class="handwriting">Carlita</h1>
+                </div>
+                <p>TE INVITAMOS A UNIRTE EN LA CELEBRACIÓN DE NUESTRA</p>
+                <h2>Wedding</h2>
+            </div>
+            <div>
+                <div>
+                    <p>FRIDAY</p>
+                    <SPInvitationDivisor />
+                    <p>11:00 AM</p>
+                </div>
+                <SPInvitationDivisor />
+                <div>
+                    <p>MAY</p>
+                    <span>04</span>
+                    <p>2024</p>
+                </div>
+                <SPInvitationDivisor />
+                <div>
+                    <p>HOTEL PRESIDENTE BEACH</p>
+                    <SPInvitationDivisor />
+                    <p>PLAYAS</p>
+                </div>
+            </div>
+            <div>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 18l-2 -1l-6 3v-13l6 -3l6 3l6 -3v7.5" /><path d="M9 4v13" /><path d="M15 7v5" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-gift"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z" /><path d="M12 8l0 13" /><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></svg>
+            </div>
+        </section>
+    </header>
+</Layout>
+
+<style>
+    #invitation {
+        transition: box-shadow .3s, transform .3s ease-out;
+    }
+
+    #invitation:hover {
+        box-shadow: 0px 0px 3rem var(--text);
+    }
+</style>

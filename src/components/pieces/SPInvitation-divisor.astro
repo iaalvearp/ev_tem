@@ -1,0 +1,13 @@
+---
+const { classProps } = Astro.props;
+---
+
+<div class:list={classProps}></div>
+
+<style>
+    div {
+        height: 0.125rem;
+        width: 50%;
+        background-color: var(--gold);
+    }
+</style>
