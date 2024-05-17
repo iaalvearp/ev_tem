@@ -52,9 +52,9 @@ size = '32'
 
 <Layout>
     <section class="w-full min-h-screen md:h-screen h-full bg-[var(--bg)] py-8 text-[var(--gold)]">
-        <div id="invitation" class="w-[90%] min-h-screen md:min-h-full max-w-[25rem] max-h-[56rem] mx-auto flex flex-col justify-center items-center md:gap-8 relative rounded overflow-hidden bg-[url(/img/SPInvitation-bg.png)] object-contain bg-no-repeat text-center">
+        <div id="invitation" class="w-[90%] min-h-screen md:min-h-full max-w-[25rem] max-h-[56rem] mx-auto flex flex-col justify-center items-center relative rounded overflow-hidden bg-[url(/img/SPInvitation-bg.png)] object-contain bg-no-repeat text-center">
             <img class="h-full w-[150%] md:w-full absolute z-0" src="/img/SPInvitation-board-2.png" alt="">
-            <div class="absolute z-10">
+            <div class="absolute flex flex-col gap-[.375rem] z-10">
                 <div class="flex flex-col items-center">
                     <SPInvitationDivisor classProps='w-1/4 md:w-2/5 h-[1px]'/>
                     <h2 class="georgiaFont text-xs md:text-base py-1 md:py-2">MATRIMONIO DE</h2>
@@ -62,15 +62,17 @@ size = '32'
                 </div>
                 <div>
                     <h1 class="handwriting md:text-8xl text-7xl">Alonso</h1>
-                    <div class="flex items-center justify-center gap-2 w-3/5 mx-auto">
+                    <div class="flex items-center justify-center gap-1 w-3/5 mx-auto">
                         <SPInvitationDivisor classProps="w-[20%] md:w-[25%]" />
                         <span class="georgiaFont text-xs md:text-base">AND</span>
                         <SPInvitationDivisor classProps="w-[20%] md:w-[25%]" />
                     </div>
                     <h1 class="handwriting md:text-8xl text-7xl">Carlita</h1>
                 </div>
-                <p class="georgiaFont w-3/5 mx-auto text-xs md:text-sm">Te invitamos a que seas parte de la celebración de nuestra</p>
-                <h2 class="handwriting text-3xl md:text-4xl font-bold">Boda</h2>
+                <div>
+                    <p class="georgiaFont w-3/5 mx-auto text-xs md:text-sm">Te invitamos a que seas parte de la celebración de nuestra</p>
+                    <h2 class="handwriting text-3xl md:text-4xl font-bold">Boda</h2>
+                </div>
                 <div class="w-3/5 mx-auto flex justify-center items-center gap-1">
                     <div>
                         <p class="georgiaFont text-xs md:text-sm">FRIDAY</p>
