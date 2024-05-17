@@ -1,13 +1,9 @@
 ---
 const { classProps } = Astro.props;
+
+interface Props {
+    classProps: string
+}
 ---
 
-<div class:list={classProps}></div>
-
-<style>
-    div {
-        height: 0.125rem;
-        width: 50%;
-        background-color: var(--gold);
-    }
-</style>
+<div class=`h-[1px] bg-[var(--gold)] ${classProps}`></div>

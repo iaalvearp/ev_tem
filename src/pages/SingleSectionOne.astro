@@ -1,17 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import SPInvitationDivisor from '@/components/pieces/SPInvitation-divisor.astro';
-const { bride, groom, day, month, year, dirHref, direction } = Astro.props;
+
+let { size } = Astro.props;
 
 interface Props {
-    bride: string,
-    groom: string,
-    day: string,
-    month: string,
-    year: string,
-    dirHref: string,
-    direction: string,
+    size: string 
 }
+size = '32'
 ---
 
 <script>
@@ -55,54 +51,56 @@ interface Props {
 </script>
 
 <Layout>
-    <header class="w-full min-h-screen md:h-screen h-full bg-[var(--bg)] py-8 text-[var(--gold)]">
-        <section id="invitation" class="w-[90%] h-full max-w-[25rem] max-h-[1024px] mx-auto grid grid-cols-10 grid-rows-[15] rounded overflow-hidden bg-[url(/img/SPInvitation-bg.png)] object-contain bg-no-repeat text-center">
-            <div class="col-start-1 col-end-11 row-start-1 row-end-[16]">
-                <img class="h-full w-full" src="/img/SPInvitation-board-2.png" alt="">
-            </div>
-            <div class="col-start-3 col-end-9 row-start-4 row-end-13">
-                <div>
-                    <SPInvitationDivisor class='w-full '/>
-                    <h2>MATRIMONIO DE</h2>
-                    <SPInvitationDivisor />
+    <section class="w-full min-h-screen md:h-screen h-full bg-[var(--bg)] py-8 text-[var(--gold)]">
+        <div id="invitation" class="w-[90%] min-h-screen md:min-h-full max-w-[25rem] max-h-[56rem] mx-auto flex flex-col justify-center items-center md:gap-8 relative rounded overflow-hidden bg-[url(/img/SPInvitation-bg.png)] object-contain bg-no-repeat text-center">
+            <img class="h-full w-[150%] md:w-full absolute z-0" src="/img/SPInvitation-board-2.png" alt="">
+            <div class="absolute z-10">
+                <div class="flex flex-col items-center">
+                    <SPInvitationDivisor classProps='w-1/4 md:w-2/5 h-[1px]'/>
+                    <h2 class="georgiaFont text-xs md:text-base py-1 md:py-2">MATRIMONIO DE</h2>
+                    <SPInvitationDivisor classProps="w-1/4 md:w-2/5 h-[1px]"/>
                 </div>
                 <div>
-                    <h1 class="handwriting">Alonso</h1>
-                    <div>
-                        <SPInvitationDivisor />
-                        <span>AND</span>
-                        <SPInvitationDivisor />
+                    <h1 class="handwriting md:text-8xl text-7xl">Alonso</h1>
+                    <div class="flex items-center justify-center gap-2 w-3/5 mx-auto">
+                        <SPInvitationDivisor classProps="w-[20%] md:w-[25%]" />
+                        <span class="georgiaFont text-xs md:text-base">AND</span>
+                        <SPInvitationDivisor classProps="w-[20%] md:w-[25%]" />
                     </div>
-                    <h1 class="handwriting">Carlita</h1>
+                    <h1 class="handwriting md:text-8xl text-7xl">Carlita</h1>
                 </div>
-                <p>TE INVITAMOS A UNIRTE EN LA CELEBRACIÓN DE NUESTRA</p>
-                <h2>Wedding</h2>
+                <p class="georgiaFont text-xs md:text-sm">Te invitamos a la celebración de nuestra</p>
+                <h2 class="handwriting text-3xl md:text-4xl font-bold">Boda</h2>
+                <div class="w-3/5 mx-auto flex justify-center items-center gap-1">
+                    <div>
+                        <p class="georgiaFont text-xs md:text-sm">FRIDAY</p>
+                        <SPInvitationDivisor classProps='h-[1px] w-8 mx-auto' />
+                        <p class="georgiaFont text-xs md:text-sm">11:00 AM</p>
+                    </div>
+                    <SPInvitationDivisor classProps="rotate-90 w-full" />
+                    <div>
+                        <p class="georgiaFont text-xs md:text-sm">HOTEL PRESIDENTE BEACH</p>
+                        <SPInvitationDivisor classProps="h-[1px] w-8 mx-auto" />
+                        <p class="georgiaFont text-xs md:text-sm">PLAYAS</p>
+                    </div>
+                    <SPInvitationDivisor classProps="rotate-90 w-full" />
+                    <div>
+                        <p class="georgiaFont text-xs md:text-sm">MAY</p>
+                        <span class="georgiaFont text-4xl">04</span>
+                        <p class="georgiaFont text-xs md:text-sm">2024</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center gap-4 mt-4">
+                    <a href="#">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width=`${size}`  height=`${size}`  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 18l-2 -1l-6 3v-13l6 -3l6 3l6 -3v7.5" /><path d="M9 4v13" /><path d="M15 7v5" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
+                    </a>
+                    <a href="#">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width=`${size}`  height=`${size}`  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-gift"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z" /><path d="M12 8l0 13" /><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></svg>
+                    </a>
+                </div>
             </div>
-            <div>
-                <div>
-                    <p>FRIDAY</p>
-                    <SPInvitationDivisor />
-                    <p>11:00 AM</p>
-                </div>
-                <SPInvitationDivisor />
-                <div>
-                    <p>MAY</p>
-                    <span>04</span>
-                    <p>2024</p>
-                </div>
-                <SPInvitationDivisor />
-                <div>
-                    <p>HOTEL PRESIDENTE BEACH</p>
-                    <SPInvitationDivisor />
-                    <p>PLAYAS</p>
-                </div>
-            </div>
-            <div>
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-map-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 18l-2 -1l-6 3v-13l6 -3l6 3l6 -3v7.5" /><path d="M9 4v13" /><path d="M15 7v5" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="var(--gold)"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-gift"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z" /><path d="M12 8l0 13" /><path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></svg>
-            </div>
-        </section>
-    </header>
+        </div>
+    </section>
 </Layout>
 
 <style>
@@ -112,5 +110,8 @@ interface Props {
 
     #invitation:hover {
         box-shadow: 0px 0px 3rem var(--text);
+    }
+    .georgiaFont {
+        font-family: Georgia, 'Times New Roman', serif;
     }
 </style>
