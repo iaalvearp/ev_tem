@@ -1,0 +1,17 @@
+---
+interface Props {
+    href: string,
+    src: string,
+    alt: string,
+    title: string,
+}
+
+const { href, src, alt, title } = Astro.props;
+---
+
+<a href={ href } class="block cursor-pointer w-full max-w-72 relative aspect-square h-auto rounded-sm overflow-hidden [&>h2]:hover:h-full [&>h2]:hover:text-3xl [&>h2]:hover:text-[var(--accent)] [&>h2]:hover:bg-[var(--primary-overlay)] [&>h2]:hover:backdrop-blur-sm [&>img]:hover:opacity-50 duration-300">
+    <img class="w-full h-auto absolute object-cover opacity-100 duration-300"
+    src={ src }
+    alt={ alt } />
+    <h2 class=" flex items-center justify-center absolute bottom-0 h-10 w-full bg-[var(--accent)] text-[var(--primary)] duration-300">{ title }</h2>
+</a>

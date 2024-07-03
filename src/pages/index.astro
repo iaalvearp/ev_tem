@@ -1,74 +1,16 @@
 ---
+import CardOne from '@/components/cards/CardOne.astro';
 import Layout from '@/layouts/Layout.astro';
-import HeaderWedding from '@/components/HeaderWedding.astro'
-import ReceptionWedding from '@/components/ReceptionWedding.astro'
-import PhotosWedding from '@/components/PhotosWedding.astro'
-import DressCodeWedding from '@/components/DressCodeWedding.astro'
-import HotelRecptionWedding from '@/components/HotelRecptionWedding.astro'
-import GiftWedding from '@/components/GiftWedding.astro'
-import FooterWedding from '@/components/FooterWedding.astro'
-import DressCodeDivider from '@/components/pieces/SectionDivider.astro';
-import ParentSection from '@/components/pieces/ParentSection.astro';
-import HeroWeddTwo from '@/components/HeroWeddTwo.astro';
-import OneSliderSection from '@/components/OneSliderSection.astro'
-import CountdownWedding from '@/components/CountdownWedding.astro';
-import HeaderParallax from '@/components/HeaderParallax.astro';
-import EdgeDividerDown from '@/components/pieces/EdgeDividerDown.astro';
-import EdgeDividerUp from '@/components/pieces/EdgeDividerUp.astro';
-import CloudDivisorSolid from '@/components/pieces/cloud_divisor_solid.astro';
-import CloudDivisorOverlay from '@/components/pieces/cloud_divisor_overlay.astro';
-import DateWedding from '@/components/pieces/DateWedding.astro'
-import LineDivisorOneLeft from '@/components/pieces/line_divisor_one_left.astro';
-import Attribution from '@/components/pieces/Attribution.astro';
-import PhotoGallery from '@/components/PhotoGallery.astro';
 ---
 
 <Layout title="Components List">
-	<main class="h-full w-full relative">
-		<HeaderParallax 
-		husband="Alonso"
-		wife="Carla"/>
-		<EdgeDividerDown>
-			<CloudDivisorSolid slot='solid' />
-			<CloudDivisorOverlay slot='overlay' />
-		</EdgeDividerDown>
-		<PhotoGallery
-		imgH='1080'
-		imgW='1080'
-		pic1="/img/iaPic3.webp"
-		pic2="/img/iaPic5.webp"
-		pic3="/img/iaPic7.webp"
-		pic4="/img/iaPic9.webp"
-		pic5="/img/iaPic11.webp"
-		pic6="/img/iaPic13.webp" />
-		<!-- <ParentSection
-		boyFather='Padre del Novio'
-		boyMother='Madre del Novio'
-		girlFather='Padre de la Novia'
-		girlMother='Madre de la Novia'
-		godfather='Al Pacino'
-		godmother='Eva Green' />
-		<EdgeDividerUp>
-			<CloudDivisorSolid slot='solid' />
-			<CloudDivisorOverlay slot='overlay' />
-		</EdgeDividerUp>
-		<DressCodeWedding/>
-		<EdgeDividerUp>
-			<CloudDivisorSolid slot='solid' />
-			<CloudDivisorOverlay slot='overlay' />
-		</EdgeDividerUp>
-		
-		<EdgeDividerDown>
-			<CloudDivisorSolid slot='solid' />
-			<CloudDivisorOverlay slot='overlay' />
-		</EdgeDividerDown>
-		<FooterWedding /> -->
-		<a href="./SingleSectionOne">Simple Section Invitation</a>
-		<EdgeDividerUp>
-			<CloudDivisorSolid slot='solid' />
-			<CloudDivisorOverlay slot='overlay' />
-		</EdgeDividerUp>
-		<Attribution />
+	<main class="h-full w-full relative max-w-72">
+		<CardOne
+		href='buttons'
+		src='https://img.freepik.com/vector-premium/coleccion-colorida-botones-diseno-web-diseno-plano_23-2147936416.jpg'
+		alt='UI buttons for Alpes Agency'
+		title='Buttons'
+		/>
 	</main>
 </Layout>
 

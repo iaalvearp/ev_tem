@@ -9,15 +9,7 @@ import ItemNavOne from "./ItemNavOne.astro"
         <span class="font-handwriting text-6xl cursor-default">lpes</span>
     </picture>
     <ul id="menu" class="fontSans font-medium h-full min-w-max hidden md:flex items-center justify-center py-4 gap-4">
-        <ItemNavOne 
-        text="Inicio"
-        href="#home"/>
-        <ItemNavOne 
-        text="Servicios"
-        href="#services"/>
-        <ItemNavOne 
-        text="Contacto"
-        href="#contact"/>
+        <slot />
     </ul>
 </nav>
 

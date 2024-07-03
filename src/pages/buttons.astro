@@ -1,0 +1,21 @@
+---
+import BtnSeeMore from "@/components/buttons/BtnSeeMore.astro";
+import BtnWedding from "@/components/buttons/BtnWedding.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="UI Buttons Alpes Agency" >
+    <main class="bg-[var(--secondary)]">
+        <h1 class="h-20 w-full grid content-center pl-8 bg-[var(--accent)]">UI Buttons by <strong class="block text-4xl -mt-2">Alpes</strong></h1>
+        <section class="flex justify-center items-center gap-8 mt-8">
+            <BtnSeeMore
+            href="#"
+            text="Ver más"
+            />
+            <BtnWedding 
+            href="#"
+            text="Ver más"
+            />
+        </section>
+    </main>
+</Layout>
