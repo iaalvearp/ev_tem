@@ -4,16 +4,29 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Components List">
-	<main class="h-full w-full relative max-w-72">
-		<CardOne
-		href='buttons'
-		src='https://img.freepik.com/vector-premium/coleccion-colorida-botones-diseno-web-diseno-plano_23-2147936416.jpg'
-		alt='UI buttons for Alpes Agency'
-		title='Buttons'
-		/>
+	<main class="h-full w-full relative">
+		<h1 class="text-center text-6xl py-8">UI Components by Alpes</h1>
+		<header class="w-full max-w-3xl mx-auto">
+			<CardOne
+			href='buttons'
+			src='https://img.freepik.com/vector-premium/coleccion-colorida-botones-diseno-web-diseno-plano_23-2147936416.jpg'
+			alt='UI buttons for Alpes Agency'
+			title='UI Buttons'
+			/>
+			<CardOne
+			href='cards'
+			src='https://img.freepik.com/vector-premium/coleccion-colorida-botones-diseno-web-diseno-plano_23-2147936416.jpg'
+			alt='UI Cards for Alpes Agency'
+			title='UI Cards'
+			/>
+		</header>
 	</main>
 </Layout>
 
 <style>
-	
+	header {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 240px));
+		gap: 1rem;
+	}
 </style>

@@ -1,21 +1,36 @@
 ---
 import BtnSeeMore from "@/components/buttons/BtnSeeMore.astro";
 import BtnWedding from "@/components/buttons/BtnWedding.astro";
-import Layout from "@/layouts/Layout.astro";
+import BtnIcon from "@/components/buttons/BtnIcon.astro";
+import PagesLayout from "@/layouts/PagesLayout.astro";
 ---
 
-<Layout title="UI Buttons Alpes Agency" >
-    <main class="bg-[var(--secondary)]">
-        <h1 class="h-20 w-full grid content-center pl-8 bg-[var(--accent)]">UI Buttons by <strong class="block text-4xl -mt-2">Alpes</strong></h1>
-        <section class="flex justify-center items-center gap-8 mt-8">
-            <BtnSeeMore
-            href="#"
-            text="Ver más"
-            />
-            <BtnWedding 
-            href="#"
-            text="Ver más"
-            />
-        </section>
-    </main>
-</Layout>
+<PagesLayout pageTitle="UI Buttons">
+
+    <BtnSeeMore
+    href="#"
+    text="Ver más"
+    />
+    <BtnWedding 
+    href="#"
+    text="Ver más"
+    />
+    <BtnIcon
+    href="#" 
+    text="Download">
+    <svg
+      class="size-5 rtl:rotate-180"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M17 8l4 4m0 0l-4 4m4-4H3"
+      />
+    </svg>    
+    </BtnIcon>
+</PagesLayout>
